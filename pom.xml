@@ -8,6 +8,16 @@
         <version>3.2.2-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <packaging>pom</packaging>
+    <modules>
+        <module>common</module>
+        <module>common/service_base</module>
+        <module>common/spring_security</module>
+        <module>infrastructure</module>
+        <module>infrastructure/api_gateway</module>
+        <module>service</module>
+        <module>service/service_alc</module>
+    </modules>
     <groupId>com.example</groupId>
     <artifactId>SpringSecurityAlcDemo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
