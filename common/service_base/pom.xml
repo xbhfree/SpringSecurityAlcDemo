@@ -9,10 +9,9 @@
     </parent>
 
     <artifactId>service_base</artifactId>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>service_base</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

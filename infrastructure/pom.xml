@@ -9,10 +9,8 @@
 
     <packaging>pom</packaging>
     <artifactId>infrastructure</artifactId>
-    <packaging>jar</packaging>
 
     <name>infrastructure</name>
-    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
