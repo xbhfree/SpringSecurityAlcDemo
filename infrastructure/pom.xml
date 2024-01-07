@@ -12,6 +12,9 @@
 
     <name>infrastructure</name>
 
+    <modules>
+        <module>api_gateway</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

@@ -12,6 +12,9 @@
 
     <name>service</name>
 
+    <modules>
+        <module>service_alc</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
