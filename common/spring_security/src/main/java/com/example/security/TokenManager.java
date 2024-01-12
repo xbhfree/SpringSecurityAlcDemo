@@ -77,4 +77,8 @@ public class TokenManager {
                 .parseSignedClaims(token)
                 .getPayload();
     }
+
+
+    //3 删除token
+    public void removeToken(String token) { }
 }
