@@ -79,6 +79,6 @@ public class TokenManager {
     }
 
 
-    //3 删除token
+    //3 删除token，不需要写，客户端不携带token即可
     public void removeToken(String token) { }
 }
