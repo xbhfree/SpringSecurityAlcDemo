@@ -1,4 +1,4 @@
-package java.com.example.entity;
+package com.example.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

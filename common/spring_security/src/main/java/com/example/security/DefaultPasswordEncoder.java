@@ -1,4 +1,4 @@
-package java.com.example.security;
+package com.example.security;
 
 import com.example.utils.MD5;
 import org.springframework.security.crypto.password.PasswordEncoder;

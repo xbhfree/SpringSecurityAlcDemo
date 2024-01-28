@@ -1,4 +1,4 @@
-package java.com.example.security;
+package com.example.security;
 
 import com.example.utils.R;
 import com.example.utils.ResponseUtil;

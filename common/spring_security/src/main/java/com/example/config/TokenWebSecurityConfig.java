@@ -1,4 +1,4 @@
-package java.com.example.config;
+package com.example.config;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.ProviderManager;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -26,13 +28,12 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 
-import java.com.example.filter.TokenAuthFilter;
-import java.com.example.filter.TokenLoginFilter;
-import java.com.example.security.DefaultPasswordEncoder;
-import java.com.example.security.TokenLogoutHandler;
-import java.com.example.security.TokenManager;
-import java.com.example.security.UnauthEntryPoint;
-import java.io.IOException;
+import com.example.filter.TokenAuthFilter;
+import com.example.filter.TokenLoginFilter;
+import com.example.security.DefaultPasswordEncoder;
+import com.example.security.TokenLogoutHandler;
+import com.example.security.TokenManager;
+import com.example.security.UnauthEntryPoint;
 
 @Configuration
 @EnableWebSecurity
@@ -62,21 +63,21 @@ public class TokenWebSecurityConfig{
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration  authenticationConfiguration) throws Exception{
-        return authenticationConfiguration.getAuthenticationManager();
+    public AuthenticationManager authenticationManager() throws Exception{
+        //return authenticationConfiguration.getAuthenticationManager();
 
-        /*DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setUserDetailsService(userService);
+        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+        daoAuthenticationProvider.setUserDetailsService(userDetailsService);
         ProviderManager pm = new ProviderManager(daoAuthenticationProvider);
-        return pm;*/
+        return pm;
     }
     @Bean
-    protected TokenLoginFilter tokenLoginFilter(){
+    protected TokenLoginFilter tokenLoginFilter() throws Exception{
         return new TokenLoginFilter(authenticationManager(),tokenManager, redisTemplate);
     }
 
     @Bean
-    protected TokenAuthFilter tokenAuthFilter(){
+    protected TokenAuthFilter tokenAuthFilter() throws Exception{
         return new TokenAuthFilter(authenticationManager(),tokenManager, redisTemplate);
     }
     @Bean

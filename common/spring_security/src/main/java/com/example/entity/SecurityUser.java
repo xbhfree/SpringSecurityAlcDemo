@@ -1,4 +1,4 @@
-package java.com.example.entity;
+package com.example.entity;
 
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;

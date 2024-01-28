@@ -1,4 +1,4 @@
-package java.com.example.filter;
+package com.example.filter;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -15,7 +15,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextHolderStrategy;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-import java.com.example.security.TokenManager;
+import com.example.security.TokenManager;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;

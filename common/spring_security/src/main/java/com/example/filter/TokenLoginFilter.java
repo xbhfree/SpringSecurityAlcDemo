@@ -1,4 +1,4 @@
-package java.com.example.filter;
+package com.example.filter;
 
 import com.example.utils.R;
 import com.example.utils.ResponseUtil;
@@ -15,9 +15,9 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import java.com.example.entity.SecurityUser;
-import java.com.example.entity.User;
-import java.com.example.security.TokenManager;
+import com.example.entity.SecurityUser;
+import com.example.entity.User;
+import com.example.security.TokenManager;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class TokenLoginFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
 
 
-    public TokenLoginFilter(AuthenticationManager authenticationManager, RedisTemplate redisTemplate, TokenManager tokenManager) {
+    public TokenLoginFilter(AuthenticationManager authenticationManager, TokenManager tokenManager, RedisTemplate redisTemplate) {
         this.tokenManager = tokenManager;
         this.authenticationManager = authenticationManager;
         this.redisTemplate = redisTemplate;
