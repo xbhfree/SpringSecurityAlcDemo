@@ -8,11 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <dependencies>
-        <dependency>
-            <groupId>com.adobe.aem</groupId>
-            <artifactId>uber-jar</artifactId>
-            <version>6.5.19</version>
-        </dependency>
+
     </dependencies>
     <modelVersion>4.0.0</modelVersion>
 

@@ -1,8 +1,6 @@
 package com.example.config;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,28 +8,17 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
-import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-
 import com.example.filter.TokenAuthFilter;
 import com.example.filter.TokenLoginFilter;
 import com.example.security.DefaultPasswordEncoder;
-import com.example.security.TokenLogoutHandler;
 import com.example.security.TokenManager;
 import com.example.security.UnauthEntryPoint;
 
@@ -44,7 +31,7 @@ public class TokenWebSecurityConfig{
     private RedisTemplate redisTemplate;
     private DefaultPasswordEncoder defaultPasswordEncoder;
 
-    @Autowired
+    //@Autowired
     private UserDetailsService userDetailsService;
     //注册密码加密bean
     @Bean
@@ -57,10 +44,10 @@ public class TokenWebSecurityConfig{
      * 需要关联到自定义的子类implements UserDetailsService
      * @return
      */
-    @Bean
+    /*@Bean
     public UserDetailsService userDetailsService(){
         return username -> userDetailsService.loadUserByUsername(username);
-    }
+    }*/
 
     @Bean
     public AuthenticationManager authenticationManager() throws Exception{
